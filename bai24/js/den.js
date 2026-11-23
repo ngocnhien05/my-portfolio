@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const SO_MAT = 6;
     const BAN_KINH = 175;          // khoảng cách từ tâm tới mỗi mặt (px)
     let goc = 0;                    // góc quay hiện tại
-    let dangQuay = true;
+    let dangQuay = false;           // đứng yên 2 giây đầu để thấy Ảnh 1 trước
+    setTimeout(() => { if (!status.textContent) dangQuay = true; }, 2000);
 
     // Tạo 6 mặt đèn
     for (let i = 0; i < SO_MAT; i++) {
