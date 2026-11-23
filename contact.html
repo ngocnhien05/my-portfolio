@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Liên hệ - Nguyễn Hoà Ngọc Nhiên</title>
+    <link rel="icon" href="images/logo.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><img src="images/logo.svg" alt="Logo"></a>
+        <div class="menu">
+            <a href="index.html">Trang chủ</a>
+            <a href="about.html">Giới thiệu</a>
+            <a href="contact.html" class="active">Liên hệ</a>
+        </div>
+    </nav>
+
+    <header class="small">
+        <h1>Liên hệ</h1>
+        <p>Gửi lời nhắn cho mình nhé</p>
+    </header>
+
+    <section>
+        <p class="center">Email: <a href="mailto:ngocnhien.dev@example.com">ngocnhien.dev@example.com</a></p>
+
+        <form id="contact-form">
+            <label for="name">Họ tên</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <label for="message">Lời nhắn</label>
+            <textarea id="message" rows="5" required></textarea>
+
+            <button type="submit">Gửi</button>
+            <p id="form-result"></p>
+        </form>
+    </section>
+
+    <footer>© 2026 Nguyễn Hoà Ngọc Nhiên</footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
