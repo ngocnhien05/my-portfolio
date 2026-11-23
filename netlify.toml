@@ -1,3 +1,13 @@
+# Repo này dùng cho 2 site Netlify:
+# - Site có tên chứa "portfolio"  -> deploy portfolio (Bài 19/21)
+# - Các site khác                 -> deploy thư mục bai24 (Bài 24)
 [build]
-  publish = "bai24"
-  command = ""
+  publish = "dist"
+  command = """
+    rm -rf dist && mkdir dist && \
+    if echo "$SITE_NAME" | grep -qi portfolio; then \
+      cp -r index.html about.html contact.html css js images dist/; \
+    else \
+      cp -r bai24/. dist/; \
+    fi
+  """
