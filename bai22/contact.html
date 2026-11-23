@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Nguyễn Hoà Ngọc Nhiên</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <a class="brand" href="index.html">&lt;NgọcNhiên /&gt;</a>
+        <div class="links">
+            <a href="index.html">Trang chủ</a>
+            <a href="about.html">Giới thiệu</a>
+            <a href="projects.html">Dự án</a>
+            <a href="contact.html" class="active">Liên hệ</a>
+        </div>
+        <button id="theme-toggle" type="button">🌙 Tối</button>
+    </nav>
+    <main>
+        <h2 class="reveal">Liên hệ</h2>
+        <div class="card reveal">
+            <p style="margin-bottom:1rem">Email: 231A010265NgocNhien@mssv.com</p>
+            <!-- Thay YOUR_FORM_ID bằng mã form lấy từ formspree.io -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <label for="name">Họ tên</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Lời nhắn</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Gửi</button>
+            </form>
+        </div>
+    </main>
+    <footer>© 2026 Nguyễn Hoà Ngọc Nhiên · MSSV: 231A010265</footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

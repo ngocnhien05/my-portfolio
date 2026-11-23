@@ -1,0 +1,45 @@
+/* Mobile first + dark mode bằng biến CSS */
+:root { --bg: #f5f7fa; --card: #ffffff; --text: #1d2430; --muted: #5b6676; --accent: #2563eb; --nav: #1d2430; }
+body.dark { --bg: #0f141b; --card: #1a222d; --text: #e6ebf2; --muted: #9aa6b5; --accent: #60a5fa; --nav: #0a0e13; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; transition: background .3s, color .3s; }
+a { color: var(--accent); }
+
+nav { background: var(--nav); padding: .75rem 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; position: sticky; top: 0; z-index: 10; }
+nav .brand { color: white; font-weight: bold; text-decoration: none; margin-right: auto; }
+nav .links { display: flex; flex-wrap: wrap; gap: .25rem; width: 100%; order: 3; }
+nav .links a { color: #d8dee8; text-decoration: none; padding: .3rem .7rem; border-radius: 6px; }
+nav .links a.active, nav .links a:hover { background: var(--accent); color: white; }
+#theme-toggle { background: none; border: 1px solid #5b6676; color: white; border-radius: 20px; padding: .3rem .8rem; cursor: pointer; font-size: .9rem; }
+
+header { text-align: center; padding: 3rem 1rem; }
+header img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; object-position: 75% 70%; border: 4px solid var(--accent); }
+header h1 { font-size: 1.8rem; margin-top: .75rem; }
+header p { color: var(--muted); }
+
+main { max-width: 1000px; margin: 0 auto; padding: 1rem; }
+h2 { margin: 1.5rem 0 1rem; }
+.card { background: var(--card); border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+
+/* CSS Grid: 1 cột trên điện thoại, 2 cột tablet, 3 cột máy tính */
+.grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.grid .card h3 { color: var(--accent); margin-bottom: .25rem; }
+.tag { display: inline-block; font-size: .8rem; background: var(--bg); color: var(--muted); padding: .1rem .6rem; border-radius: 12px; margin-top: .5rem; }
+
+form { display: flex; flex-direction: column; gap: .5rem; }
+input, textarea { padding: .7rem; border: 1px solid var(--muted); border-radius: 6px; background: var(--bg); color: var(--text); font: inherit; }
+button[type=submit] { background: var(--accent); color: white; border: none; padding: .8rem; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+
+footer { text-align: center; padding: 2rem 1rem; color: var(--muted); font-size: .9rem; }
+
+/* Hiệu ứng khi cuộn (Intersection Observer thêm class .show) */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .6s, transform .6s; }
+.reveal.show { opacity: 1; transform: none; }
+
+@media (min-width: 600px) {
+  nav .links { width: auto; order: 0; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  header h1 { font-size: 2.4rem; }
+}
+@media (min-width: 900px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
